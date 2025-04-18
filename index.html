@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizlet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body{
+            background-color: #F6F7FB;
+        }
+        .nav{
+            padding: 0 16px 12px 16px;
+            height: 40px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navLeft{
+            height: 40px;
+            padding-right: 24px;
+            display: flex;
+            align-items: center;
+        }
+        .nav-menu{
+            font-family: hurme_no2-webfont, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 20px;
+            color: rgb(46, 56, 86);
+            display: flex;
+            gap: 40px;
+            margin-left: 32px;
+            padding-top: 13px;
+        }
+        .dropdown {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 14px;
+            color: #2E3856;
+        }
+
+        .dropdown span {
+            margin-right: 4px;
+            font-size: 14px;
+        }
+
+        .dropdown i {
+            font-size: 12px;
+        }
+
+    /* Search bar */
+        .nav-search {
+            flex-grow: 1;
+            max-width: 500px;
+            margin: 0 16px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #939BB4;
+            font-size: 18px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 10px 10px 36px;
+            border: 1px solid #F6F7FB;
+            border-radius: 8px;
+            background-color: #F6F7FB;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            color: #939BB4;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #4255ff;
+            background-color: white;
+        }
+
+        .search-input::placeholder {
+            color: #939BB4;
+        }
+        /* Nav right */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .create-btn {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background-color: transparent;
+            border: none;
+            color: #4255ff;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .create-btn i {
+            margin-right: 6px;
+        }
+
+        .login-btn {
+            padding: 8px 16px;
+            background-color: #4255ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .login-btn:hover {
+            background-color: #3a49e0;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 1024px) {
+            .nav-menu {
+                gap: 24px;
+                margin-left: 16px;
+            }
+            
+            .nav-search {
+                max-width: 400px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 12px 16px;
+            }
+
+            .navLeft {
+                width: 100%;
+                justify-content: space-between;
+                padding-right: 0;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-search {
+                order: 3;
+                max-width: 100%;
+                margin: 12px 0 0 0;
+            }
+
+            .nav-right {
+                margin-left: auto;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .nav {
+                padding: 8px 12px;
+            }
+
+            .navLeft img {
+                height: 40px;
+            }
+
+            .nav-search {
+                margin-top: 8px;
+            }
+
+            .nav-right {
+                gap: 8px;
+            }
+
+            .create-btn span {
+                display: none;
+            }
+
+            .create-btn i {
+                margin-right: 0;
+            }
+
+            .login-btn {
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+
+        <div class="navLeft">
+                <img src="https://1000logos.net/wp-content/uploads/2021/11/Quizlet-Logo-768x432.png" alt="" style="height: 54.5px;">
+
+                <div class="nav-menu">
+                    <div class="dropdown">
+                        <span>Study tools</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown">
+                        <span>Subjects</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+        </div>
+            
+        <div class="nav-search">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="search-input" placeholder="Flashcard sets, textbooks, questions">
+                </div>
+        </div>
+
+        <div class="nav-right">
+            <button class="create-btn">
+                <i class="fas fa-plus"></i>
+                Create
+            </button>
+            <button class="login-btn">Log in</button>
+        </div>
+
+    </nav>
+</body>
+</html>
+
